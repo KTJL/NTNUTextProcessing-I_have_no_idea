@@ -5,7 +5,7 @@ import os
 import re
 import json
 
-path = "./pos" #資料夾目錄
+path = "./pos_lonyo63" #資料夾目錄
 
 files= os.listdir(path) #得到資料夾下的所有檔名稱
 s = []
