@@ -18,7 +18,7 @@ for file in files: #遍歷資料夾
             str =  line
             s.append(str) #每個檔案的文字存到list中   
 
-print(s) #列印結果
+#print(s) #列印結果
 
 #re提出名詞
 resultLIST = []
@@ -26,7 +26,7 @@ pat = re.compile(r"((?<=<ENTITY_oov>)|(?<=<ENTITY_nounHead>)|(?<=<ENTITY_noun>)|
 for i in s:
     resultLIST.append([p.group(0) for p in pat.finditer(i)])
     
-print(resultLIST)
+#print(resultLIST)
 
 filename = 'result.json'
 finalresultLIST = []
@@ -40,10 +40,10 @@ for index in resultLIST:
             pass
         else:
             countlist[i] = index.count(i)
-    print(countlist)
+    #print(countlist)
     for i in countlist:
         finalresultLIST.append(i)
-print(finalresultLIST)
+#print(finalresultLIST)
 
 #詞頻分析不同篇之食材
 for i in finalresultLIST:
@@ -52,7 +52,7 @@ for i in finalresultLIST:
     else:
         resultDICT[i] = finalresultLIST.count(i)
         
-print(resultDICT)
+#print(resultDICT)
      
 with open(filename, "w", encoding = "utf-8") as f:
     json.dump(resultDICT, f, ensure_ascii = False)
