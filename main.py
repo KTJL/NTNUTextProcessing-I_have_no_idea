@@ -56,5 +56,4 @@ for i in finalresultLIST:
      
 with open(filename, "w", encoding = "utf-8") as f:
     json.dump(resultDICT, f, ensure_ascii = False)
-
     
